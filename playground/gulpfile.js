@@ -9,11 +9,15 @@ var gulp = require('gulp'),
 // Define gulp task: Run server script compiling js code with babel and put it in build folder
 gulp.task('scripts:server', () => {
     return gulp.src('./src-server/**/*.js')
+        .pipe($cached('server')) // don't reprocess no changes
         .pipe($.babel())
         .pipe(gulp.dest('./build'));
 });
 
 // Watch dir for changes and execute other task on change
-gulp.task('watch:scripts:server', () => {
-    return gulp.watch('./src-server/**/*.js', gulp.secret('scripts:server'));
-});
+gulp.task('watch:scripts:server', gulp.series(
+    "scripts:server",
+    () => {
+        return gulp.watch('./src-server/**/*.js', gulp.series('scripts:server'));
+    }
+));
