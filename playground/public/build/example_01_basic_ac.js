@@ -10265,6 +10265,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 // Save jQuery html objects in constants for easy access
 var $title = (0, _jquery2.default)('#title'); // Traditional Implemention: Autocompelte with jQuery
 
+// Three issues to fix:
+// 1. Non character input causes new queries
+// 2. Queries on ever keystroke
+// 3. Results are shown before last request is resolved
+
 // Import jQuery
 
 var $results = (0, _jquery2.default)('#results');

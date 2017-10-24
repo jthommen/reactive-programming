@@ -1,5 +1,10 @@
 // Traditional Implemention: Autocompelte with jQuery
 
+// Three issues to fix:
+// 1. Non character input causes new queries
+// 2. Queries on ever keystroke
+// 3. Results are shown before last request is resolved
+
 // Import jQuery
 import $ from 'jquery';
 
