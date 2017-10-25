@@ -72,6 +72,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 // Observable and Observer at the same time
 // Used to bridge reactive and non-reactive code
 // Subjects don't need to hook into event streams but can produce their own
+// Example: Current User
 
 var apiCall$ = new _Rx2.default.AsyncSubject(); // Only returns last item before completion
 apiCall$.next(1);

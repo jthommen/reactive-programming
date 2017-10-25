@@ -3,6 +3,7 @@
 // Observable and Observer at the same time
 // Used to bridge reactive and non-reactive code
 // Subjects don't need to hook into event streams but can produce their own
+// Example: Current User
 
 import Rx from 'rxjs/Rx';
 import { createSubscriber } from './lib/util';
