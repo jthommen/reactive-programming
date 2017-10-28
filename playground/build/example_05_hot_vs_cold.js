@@ -59,3 +59,6 @@ sub2.unsubscribe();
 // Observable is still there
 
 connection.unsubscribe(); // stops 'hot' observable
+
+// refCount() connects on first subscription, disconnects on last 
+// share() = .publish().refCount()
