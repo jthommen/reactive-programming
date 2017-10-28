@@ -1,12 +1,6 @@
 'use strict';
-
-var _Rx = require('rxjs/Rx');
-
-var _Rx2 = _interopRequireDefault(_Rx);
-
-var _util = require('./lib/util');
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var _Rx = require('rxjs/Rx');var _Rx2 = _interopRequireDefault(_Rx);
+var _util = require('./lib/util');function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 
 // const interval$ = Rx.Observable.interval(1000).take(10) // Interval is 'cold' by default
 //     .publish(); // Make observable 'hot' 
@@ -35,16 +29,13 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 // chatMessages$.subscribe(createSubscriber('one'));
 // chatMessages$.subscribe(createSubscriber('two'));
-
 // Hot vs. Cold Observables
 var simple$ = new _Rx2.default.Observable(function (observer) {
     observer.next('one');
     observer.next('two');
     observer.complete();
 
-    return function () {
-        return console.log('Disposed');
-    };
+    return function () {return console.log('Disposed');};
 });
 
 var published$ = simple$.publishLast(); // Uses async method under the hood

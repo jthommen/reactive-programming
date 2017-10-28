@@ -10256,29 +10256,23 @@ return jQuery;
 },{}],2:[function(require,module,exports){
 'use strict';
 
-var _jquery = require('jquery');
 
-var _jquery2 = _interopRequireDefault(_jquery);
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+
+
+
+var _jquery = require('jquery');var _jquery2 = _interopRequireDefault(_jquery);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 
 // Save jQuery html objects in constants for easy access
 var $title = (0, _jquery2.default)('#title'); // Traditional Implemention: Autocompelte with jQuery
-
 // Three issues to fix:
 // 1. Non character input causes new queries
 // 2. Queries on ever keystroke
 // 3. Results are shown before last request is resolved
-
 // Import jQuery
-
-var $results = (0, _jquery2.default)('#results');
-
-// Variables for bug fixes
-var lastQuery = null;
-var lastTimeout = null;
-var nextQueryId = 0;
-
+var $results = (0, _jquery2.default)('#results'); // Variables for bug fixes
+var lastQuery = null;var lastTimeout = null;var nextQueryId = 0;
 $title.on('keyup', function (e) {
     var title = e.target.value;
 
@@ -10299,17 +10293,19 @@ $title.on('keyup', function (e) {
         getItems(title).then(function (items) {
 
             // Throw away results if they're not the last one
-            if (ourQueryId != nextQueryId) return;
+            if (ourQueryId != nextQueryId)
+            return;
 
             $results.empty();
 
-            var $items = items.map(function (item) {
-                return (0, _jquery2.default)('<li />').text(item);
-            });
+            var $items = items.map(function (item) {return (0, _jquery2.default)('<li />').text(item);});
             $results.append($items);
         });
     }, 500);
+
 });
+
+
 
 // ------------
 // Library

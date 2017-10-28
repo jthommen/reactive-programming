@@ -1,12 +1,12 @@
 'use strict';
 
-var _Rx = require('rxjs/Rx');
 
-var _Rx2 = _interopRequireDefault(_Rx);
 
-var _util = require('./lib/util');
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+
+var _Rx = require('rxjs/Rx');var _Rx2 = _interopRequireDefault(_Rx);
+var _util = require('./lib/util');function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 
 // const simple$ = new Rx.Subject();
 
@@ -68,19 +68,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 // Async Subject
 // Subjects
-
 // Observable and Observer at the same time
 // Used to bridge reactive and non-reactive code
 // Subjects don't need to hook into event streams but can produce their own
 // Example: Current User
-
 var apiCall$ = new _Rx2.default.AsyncSubject(); // Only returns last item before completion
-apiCall$.next(1);
-
-apiCall$.subscribe((0, _util.createSubscriber)('one'));
-apiCall$.next(2);
-apiCall$.complete();
-
+apiCall$.next(1);apiCall$.subscribe((0, _util.createSubscriber)('one'));apiCall$.next(2);apiCall$.complete();
 setTimeout(function () {
     apiCall$.subscribe((0, _util.createSubscriber)('two'));
 }, 2000);
